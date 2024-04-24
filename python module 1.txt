@@ -1,0 +1,25 @@
+Q-4.How memory is managed in Python?
+
+-->In Python, memory management is primarily handled by the Python Memory Manager, which is responsible for allocating and deallocating memory for objects in the Python heap. Here's an overview of how memory is managed in Python:
+
+1.Reference Counting: Python uses a technique called reference counting to keep track of how many references are pointing to an object. Each object in Python has a reference count, and when an object's reference count drops to zero, it means there are no more references to that object, and the memory allocated for that object can be reclaimed.
+
+2.Garbage Collection: In addition to reference counting, Python also employs a garbage collector to deal with reference cycles. Reference cycles occur when two or more objects reference each other, creating a situation where their reference counts never drop to zero even though they are no longer needed. Python's garbage collector periodically runs to identify and collect such cyclically referenced objects, freeing up their memory.
+
+3.Memory Allocation and Deallocation	: Python manages memory allocation and deallocation using its built-in memory management functions. When an object is created using a constructor (e.g., `list()`, `dict()`, `str()`), memory is allocated from the heap. Conversely, when an object is no longer needed, Python's memory manager deallocates the memory associated with that object.
+
+4.Memory Pools: To improve memory allocation performance, Python uses memory pools for small objects. Memory pools pre-allocate memory for objects of a certain size range and then distribute this memory as needed. This helps reduce the overhead of frequent memory allocations and deallocations.
+
+5.Optimizations: Python implements several optimizations to improve memory usage and performance, such as interning small integers and certain string literals, recycling unused memory blocks, and optimizing memory allocation patterns.
+
+-->Overall, Python's memory management is designed to balance performance and resource usage while providing a high level of abstraction to developers. However, it's important for developers to be mindful of memory usage, especially in long-running applications or when dealing with large datasets, to avoid potential memory leaks or excessive memory consumption.
+
+Q-5.What is the purpose continue statement in python?
+-->The continue statement in Python is used within loops to skip the remaining code for the current iteration and proceed to the next iteration. It's handy for controlling loop execution based on specific conditions without exiting the loop entirely.
+
+Q-15.What are negative indexes and why are they used?
+
+-->Negative indexes in Python are used to access elements from the end of a sequence (such as a list, tuple, or string). The index -1 refers to the last element, -2 refers to the second-to-last element, and so on.
+
+-->Negative indexes are useful when you want to access elements from the end of a sequence without knowing its length. They provide a convenient way to access elements relative to the end of the sequence, especially when the length of the sequence is unknown or variable.
+
